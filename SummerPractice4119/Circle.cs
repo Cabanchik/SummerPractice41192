@@ -58,8 +58,6 @@ namespace SummerPractice4119
                     moveThread.Abort();
                     return;
                 }
-
-
                 centre.Move(dx, dy);
                 Thread.Sleep(20);
             }

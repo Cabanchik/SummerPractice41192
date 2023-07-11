@@ -39,7 +39,7 @@ namespace SummerPractice4119
             height = 50;
             moveTimer = new System.Windows.Forms.Timer();
             moveTimer.Interval = 20;
-            Show();
+            Show(panel);
         }
 
         public void RectangleMovingStop()
@@ -52,9 +52,9 @@ namespace SummerPractice4119
             {
                 if (getRectangleX() <= 330 || getRectangleY() <= 170)
                 {
-                    Clear();
+                    ////Clear();
                     centre.Move(dx, dy);
-                    Show();
+                    //Show();
                 }
                 else
                 {
@@ -67,9 +67,9 @@ namespace SummerPractice4119
             SolidBrush b = new SolidBrush(Color.White);
             panel.FillRectangle(b, centre.GetX(), centre.GetY(), width, height);
         }
-        public void Show()
+        public void Show(Graphics g)
         {
-            SolidBrush b = new SolidBrush(Color.Wheat);
+            SolidBrush b = new SolidBrush(Color.Black);
             panel.FillRectangle(b, centre.GetX(), centre.GetY(), width, height);
         }
         public int getRectangleX()

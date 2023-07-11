@@ -40,41 +40,40 @@ namespace SummerPractice4119
                 sas.Moving = true;
                 started = true;
                 timer = new Timer();
-                timer.Interval = 25;
-                //sas.rectangleStop += circleRun;
+                timer.Interval = 50;
                 timer.Tick += sas.MoveTimerEventX;
                 timer.Start();
                 sas.rectangleStop += circle.StartOrder;
-                //sas.rectangleStop += circle1.StartOrder;
-                //sas.rectangleStop += circle2.StartOrder;
-                //sas.rectangleStop += circle3.StartOrder;
+                timer.Tick += circleRun;
+                sas.rectangleStop += circle1.StartOrder;
+                sas.rectangleStop += circle2.StartOrder;
+                sas.rectangleStop += circle3.StartOrder;
             }
         }
-        public void circleRun()
+        public void circleRun(object sender, EventArgs e)
         {
-            //timer.Tick -= sas.MoveTimerEventX;
-            //timer.Stop();
-            ////circle.StartOrder();
-            //circle1.StartOrder();
-            //circle2.StartOrder();
-            //circle3.StartOrder();
+            panelMain.Invalidate();
         }
         
 
         private void panelMain_Click(object sender, EventArgs e)
         {
-            circle = new Circle(600, 100, 20, panelMain.CreateGraphics(),1);
-            //circle1 = new Circle(500, 250, 20, panelMain.CreateGraphics(),1);
-            //circle2 = new Circle(200, 50, 20, panelMain.CreateGraphics(),-1);
-            //circle3 = new Circle(20, 250, 20, panelMain.CreateGraphics(),-1);
+            circle = new Circle(600, 100, 20, panelMain.CreateGraphics(), 1);
+            circle1 = new Circle(500, 250, 20, panelMain.CreateGraphics(), 1);
+            circle2 = new Circle(200, 50, 20, panelMain.CreateGraphics(), -1);
+            circle3 = new Circle(20, 250, 20, panelMain.CreateGraphics(), -1);
         }
 
         private void panelMain_Paint(object sender, PaintEventArgs e)
         {
-            if (started)
-            {
+            //if (started)
+            //{
                 circle.Show(e.Graphics);
-            }
+                circle1.Show(e.Graphics);
+                circle2.Show(e.Graphics);
+                circle3.Show(e.Graphics);
+                sas.Show(e.Graphics);
+            //}
         }
     }
 }
