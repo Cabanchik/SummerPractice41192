@@ -23,7 +23,6 @@ namespace SummerPractice4119
         public delegate void Brush();
         public event Brush circleBrush;
         Thread moveThread;
-        public bool Moving { get => moving; set => moving = value; }
         public Circle(int _x, int _y, int _rad, Graphics g, int id)
         {
             centre = new Dot(_x, _y);
@@ -61,8 +60,6 @@ namespace SummerPractice4119
                 centre.Move(dx, dy);
                 Thread.Sleep(20);
             }
-
-
         }
         public void StartOrder()
         {
@@ -82,17 +79,6 @@ namespace SummerPractice4119
 
         }
 
-        public void Clear(Graphics g)
-        {
-
-            SolidBrush b = new SolidBrush(Color.White);
-            g.FillEllipse(b, centre.GetX(), centre.GetY(), 2 * rad, 2 * rad);
-
-        }
-        public void StopSignal()
-        {
-            Moving = false;
-        }
 
     }
 }

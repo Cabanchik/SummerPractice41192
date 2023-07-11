@@ -52,9 +52,7 @@ namespace SummerPractice4119
             {
                 if (getRectangleX() <= 330 || getRectangleY() <= 170)
                 {
-                    ////Clear();
                     centre.Move(dx, dy);
-                    //Show();
                 }
                 else
                 {
@@ -62,14 +60,9 @@ namespace SummerPractice4119
                 }
             }
         }
-        public void Clear()
-        {
-            SolidBrush b = new SolidBrush(Color.White);
-            panel.FillRectangle(b, centre.GetX(), centre.GetY(), width, height);
-        }
         public void Show(Graphics g)
         {
-            SolidBrush b = new SolidBrush(Color.Black);
+            SolidBrush b = new SolidBrush(Color.Wheat);
             panel.FillRectangle(b, centre.GetX(), centre.GetY(), width, height);
         }
         public int getRectangleX()

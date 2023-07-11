@@ -54,7 +54,6 @@ namespace SummerPractice4119
         {
             panelMain.Invalidate();
         }
-        
 
         private void panelMain_Click(object sender, EventArgs e)
         {
@@ -66,14 +65,14 @@ namespace SummerPractice4119
 
         private void panelMain_Paint(object sender, PaintEventArgs e)
         {
-            //if (started)
-            //{
+            if (started)
+            {
                 circle.Show(e.Graphics);
                 circle1.Show(e.Graphics);
                 circle2.Show(e.Graphics);
                 circle3.Show(e.Graphics);
                 sas.Show(e.Graphics);
-            //}
+            }
         }
     }
 }
